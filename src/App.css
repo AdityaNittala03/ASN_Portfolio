@@ -1,0 +1,43 @@
+:root {
+  --cosmic-black: #02010a;
+  --deep-navy: #04052e;
+  --royal-purple: #140152;
+  --electric-indigo: #22007c;
+  --vibrant-blue: #0d00a4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cosmic-black);
+  color: white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--cosmic-black);
+}
+
+h1 {
+  font-size: 3rem;
+  background: linear-gradient(45deg, var(--vibrant-blue), var(--electric-indigo));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #ffffff80;
+  font-size: 1.2rem;
+}

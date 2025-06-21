@@ -1,0 +1,109 @@
+.tilted-card {
+  width: 300px;
+  height: 400px;
+  background: var(--royal-purple);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  border: 1px solid rgba(34, 0, 124, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.tilted-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--vibrant-blue), var(--electric-indigo), transparent, var(--vibrant-blue));
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tilted-card:hover::before {
+  opacity: 1;
+}
+
+.card-content {
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--royal-purple);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.tilted-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, var(--vibrant-blue), #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  padding: 0.25rem 0.75rem;
+  background: rgba(13, 0, 164, 0.3);
+  border: 1px solid var(--vibrant-blue);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--vibrant-blue);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .tilted-card {
+    width: 280px;
+    height: 350px;
+  }
+}

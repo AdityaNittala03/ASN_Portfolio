@@ -1,0 +1,24 @@
+.text-pressure {
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--vibrant-blue), var(--electric-indigo), #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+  user-select: none;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.text-pressure:hover {
+  filter: drop-shadow(0 0 20px rgba(13, 0, 164, 0.5));
+}
+
+@media (max-width: 768px) {
+  .text-pressure {
+    font-size: 2.5rem;
+  }
+}
