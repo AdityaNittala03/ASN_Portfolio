@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
+import getAssetPath from '../../utils/assets';
 import "./ProfileCard.css";
 
 const DEFAULT_BEHIND_GRADIENT =
@@ -33,7 +34,7 @@ const easeInOutCubic = (x) =>
   x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 
 const ProfileCardComponent = ({
-  avatarUrl = "/aditya.png",
+  avatarUrl = getAssetPath('aditya.png'),
   iconUrl = "",
   grainUrl = "",
   behindGradient,

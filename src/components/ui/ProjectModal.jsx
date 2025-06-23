@@ -145,7 +145,11 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                             Your browser does not support the video tag.
                           </video>
                         ) : (
-                          <span>Video Player</span>
+                          <div className="video-placeholder">
+                            <div className="placeholder-icon">🎥</div>
+                            <p>Video Demo</p>
+                            <span>Coming Soon</span>
+                          </div>
                         )}
                       </div>
                     </div>
@@ -230,14 +234,18 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                             Your browser does not support the video tag.
                           </video>
                         ) : (
-                          <span>Demo Video</span>
+                          <div className="video-placeholder">
+                            <div className="placeholder-icon">🎮</div>
+                            <p>Main Demo</p>
+                            <span>Coming Soon</span>
+                          </div>
                         )}
                       </div>
                     </div>
                     <div className="modal-secondary-video">
-                      <h4>Gameplay Demo</h4>
+                      <h4>Screenshot Gallery</h4>
                       <div className="video-content">
-                        {project.screenshots?.[0] ? (
+                        {project.screenshots?.[0] && project.screenshots[0].includes('.mov') ? (
                           <video
                             className="secondary-demo-video"
                             controls
@@ -251,8 +259,20 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                             <source src={project.screenshots[0]} type="video/mp4" />
                             Your browser does not support the video tag.
                           </video>
+                        ) : project.screenshots?.[0] && project.screenshots[0].includes('.png') ? (
+                          <div className="screenshot-display">
+                            <img 
+                              src={project.screenshots[0]} 
+                              alt="CHIP8 Emulator Screenshot"
+                              className="demo-screenshot"
+                            />
+                          </div>
                         ) : (
-                          <span>Gameplay Video</span>
+                          <div className="video-placeholder">
+                            <div className="placeholder-icon">🕹️</div>
+                            <p>Gameplay Demo</p>
+                            <span>Coming Soon</span>
+                          </div>
                         )}
                       </div>
                     </div>

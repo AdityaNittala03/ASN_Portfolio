@@ -12,6 +12,7 @@ import ProjectModal from '../components/ui/ProjectModal';
 import GlareHover from '../components/ui/GlareHover';
 import StarBorder from '../components/ui/StarBorder';
 import { portfolioContent } from '../data/portfolioContent';
+import getAssetPath from '../utils/assets';
 import './Home.css';
 
 // Skills data with categories and icons
@@ -89,7 +90,7 @@ const projects = [
     borderColor: '#0d00a4',
     gradient: 'linear-gradient(145deg, #0d00a4, #22007c)',
     url: 'https://github.com/AdityaNittala03/gonews',
-    videoUrl: null, // Removed large video file for GitHub Pages compatibility
+    videoUrl: null, // Video removed due to GitHub file size limits
     description: 'Full-stack Flutter + Go application featuring advanced news aggregation with India-first content strategy. Built with enterprise-grade architecture demonstrating clean code principles and high-performance system design.',
     features: [
       {
@@ -116,10 +117,10 @@ const projects = [
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg'
     ],
     screenshots: [
-      '/assets/gonews/Home_all.jpg',
-      '/assets/gonews/Home_topStories.jpg',
-      '/assets/gonews/Search.jpg',
-      '/assets/gonews/Profile_1.jpg'
+      getAssetPath('assets/gonews/Home_all.jpg'),
+      getAssetPath('assets/gonews/Home_topStories.jpg'),
+      getAssetPath('assets/gonews/Search.jpg'),
+      getAssetPath('assets/gonews/Profile_1.jpg')
     ]
   },
   {
@@ -140,15 +141,15 @@ const projects = [
       'Containerized with Docker, featuring continuous learning pipeline and anomaly detection for enhanced financial insights'
     ],
     screenshots: [
-      '/assets/Finance_Tracker/FT_1.png',
-      '/assets/Finance_Tracker/FT_2.png',
-      '/assets/Finance_Tracker/FT_3.png',
-      '/assets/Finance_Tracker/FT_4.png',
-      '/assets/Finance_Tracker/FT_5.png',
-      '/assets/Finance_Tracker/FT_6.png',
-      '/assets/Finance_Tracker/FT_7.png',
-      '/assets/Finance_Tracker/FT_8.png',
-      '/assets/Finance_Tracker/FT_9.png'
+      getAssetPath('assets/Finance_Tracker/FT_1.png'),
+      getAssetPath('assets/Finance_Tracker/FT_2.png'),
+      getAssetPath('assets/Finance_Tracker/FT_3.png'),
+      getAssetPath('assets/Finance_Tracker/FT_4.png'),
+      getAssetPath('assets/Finance_Tracker/FT_5.png'),
+      getAssetPath('assets/Finance_Tracker/FT_6.png'),
+      getAssetPath('assets/Finance_Tracker/FT_7.png'),
+      getAssetPath('assets/Finance_Tracker/FT_8.png'),
+      getAssetPath('assets/Finance_Tracker/FT_9.png')
     ]
   },
   {
@@ -179,10 +180,9 @@ const projects = [
         items: ['Interactive debugger with breakpoints', 'Step-by-step execution mode', 'Memory and register inspection', 'ROM loading and validation']
       }
     ],
-    videoUrl: '/assets/Chip8/C1.mov',
+    videoUrl: null, // Video removed due to GitHub file size limits
     screenshots: [
-      '/assets/Chip8/C2.mov',
-      '/assets/Chip8/C3.png'
+      getAssetPath('assets/Chip8/C3.png')
     ]
   },
   {
@@ -214,7 +214,7 @@ const projects = [
       }
     ],
     screenshots: [
-      '/assets/FindMy/Findmy.png'
+      getAssetPath('assets/FindMy/Findmy.png')
     ]
   }
 ];
@@ -407,7 +407,7 @@ const Home = () => {
               title="AI & FullStack Developer"
               handle="adityanittala03"
               status="Available for Opportunities"
-              avatarUrl="/aditya.png"
+              avatarUrl={getAssetPath('aditya.png')}
               showUserInfo={false}
               enableTilt={true}
             />
@@ -440,7 +440,7 @@ const Home = () => {
                   <p>Get my latest resume with detailed experience, skills, and projects</p>
                   <StarBorder
                     as="a"
-                    href="/ADITYA_NITTALA_RESUME.pdf" 
+                    href={getAssetPath('ADITYA_NITTALA_RESUME.pdf')} 
                     download="ADITYA_NITTALA_RESUME.pdf"
                     className="resume-download-btn"
                     color="magenta"
